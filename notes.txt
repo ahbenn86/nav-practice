@@ -1,0 +1,52 @@
+1. First, npm install react-router and react-router-dom. You need both. 
+2. Import what you need to use inside the file your using it. 
+    import { BrowserRouter as Router, Route, Routes } from 'react-router-dom' 👈🏽 This is usually the case. 
+3. In the case of this practice. A single route needed to be defined outside of the rest of the app which all lands on the home route.
+   So the entire app is wrapped inside the BrowserRouter followed by a seperate route defined as the contact page. 
+   Otherwise, the usual proccess is that each component has it's own route and all routes get defined within the App.js file like this:
+
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/services" element={<Services />}></Route>
+          <Route exact path="/our-work" element={<Work />}></Route>
+          <Route exact path="/squarespace" element={<Squarespace />}></Route>
+          <Route exact path="/seo" element={<Seo />}></Route>
+          <Route exact path="/branding" element={<Branding />}></Route>
+          <Route exact path="/about" element={<About />}></Route>
+          <Route exact path="/contact" element={<Contact />}></Route>
+          <Route exact path="/workshops" element={<Workshops />}></Route>
+          <Route exact path="/success" element={<Success />}></Route>
+          <Route exact path="/credits" element={<Credits />}></Route>
+        </Routes>
+        <Footer/>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+
+4. The alternative to using <Link> to navigate to a page is to use navigate. 
+                import {useNavigate} from "react-router-dom";
+                const navigate = useNavigate();
+                <button onClick={() =>{navigate("/");}}>Go to Homepage</button>
+
+
+**Key Notes**
+<Navlink/> Won't refresh the browser when clicked. <Link/> will. <Navlink> is typically used for navigation links. 
+<Navigate/> Will automatically navigate whenever it's called. i.e. 
+                                <div>
+                                <Navigate to="/contact"/> 👈 This page will auto navigate to the contact page no matter what. 
+                                About
+                                </div>
+<Navigate/> is best used as a re-direct. 
+*************

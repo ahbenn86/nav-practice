@@ -1,0 +1,12 @@
+
+
+.contact-screen {
+    color: white;
+    font-size: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 217, 0);
+    height: 100vh;
+}
